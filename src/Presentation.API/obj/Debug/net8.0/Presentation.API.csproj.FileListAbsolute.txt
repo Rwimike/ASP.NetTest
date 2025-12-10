@@ -118,3 +118,4 @@
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.API/obj/Debug/net8.0/Presentation.API.pdb
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.API/obj/Debug/net8.0/Presentation.API.genruntimeconfig.cache
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.API/obj/Debug/net8.0/ref/Presentation.API.dll
+/home/rwadmin/Escritorio/TalentoPlus/src/Presentation.API/obj/Debug/net8.0/Presentation.API.sourcelink.json

@@ -7,4 +7,6 @@ public interface IEmployeeRepository
     Task AddAsync(Employee employee);
     Task<int> GetTotalCountAsync();
     Task<int> GetCountByStatusAsync(string status);
+    Task UpdateAsync(Employee employee);
+    Task<bool> SaveChangesAsync();
 }

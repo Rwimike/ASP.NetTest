@@ -1,5 +1,3 @@
-using Application.DTOs.Employees;
-using Application.Interfaces;
 using Infrastructure.DTOs.Employees;
 using Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -12,22 +10,14 @@ public class EmployeesController : Controller
 {
     private readonly IEmployeeService _employeeService;
     private readonly IDepartmentService _departmentService;
-    private readonly IPositionService _positionService;
-    private readonly IStatusService _statusService;
-    private readonly IEducationLevelService _educationLevelService;
+
     
     public EmployeesController(
         IEmployeeService employeeService,
-        IDepartmentService departmentService,
-        IPositionService positionService,
-        IStatusService statusService,
-        IEducationLevelService educationLevelService)
+        IDepartmentService departmentService)
     {
         _employeeService = employeeService;
         _departmentService = departmentService;
-        _positionService = positionService;
-        _statusService = statusService;
-        _educationLevelService = educationLevelService;
     }
     
     // GET: Employees/Index (Lista)
@@ -103,8 +93,5 @@ public class EmployeesController : Controller
     private async Task LoadViewData()
     {
         ViewBag.Departments = await _departmentService.GetAllDepartmentsAsync();
-        ViewBag.Positions = await _positionService.GetAllPositionsAsync();
-        ViewBag.Statuses = await _statusService.GetAllStatusesAsync();
-        ViewBag.EducationLevels = await _educationLevelService.GetAllEducationLevelsAsync();
     }
 }

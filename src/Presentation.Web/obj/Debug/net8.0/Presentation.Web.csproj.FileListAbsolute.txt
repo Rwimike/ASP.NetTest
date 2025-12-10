@@ -109,3 +109,4 @@
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.Web/obj/Debug/net8.0/Presentation.Web.pdb
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.Web/obj/Debug/net8.0/Presentation.Web.genruntimeconfig.cache
 /home/rwadmin/Escritorio/TalentoPlus/src/Presentation.Web/obj/Debug/net8.0/ref/Presentation.Web.dll
+/home/rwadmin/Escritorio/TalentoPlus/src/Presentation.Web/obj/Debug/net8.0/Presentation.Web.sourcelink.json

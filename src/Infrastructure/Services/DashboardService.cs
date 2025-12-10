@@ -25,7 +25,7 @@ namespace Infrastructure.Services
                     .CountAsync(e => !e.IsDeleted && e.Status.Name == "Active"),
                 OnVacationEmployees = await _context.Employees
                     .Include(e => e.Status)
-                    .CountAsync(e => !e.IsDeleted && e.Status.Name == "Vacation")
+                    .CountAsync(e => !e.IsDeleted && e.Status.Name == "On Vacation")
             };
         }
         

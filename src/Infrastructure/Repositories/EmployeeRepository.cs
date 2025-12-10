@@ -48,4 +48,13 @@ public class EmployeeRepository : IEmployeeRepository
         return await _context.Employees
             .CountAsync(e => e.Status.Name == status);
     }
+    public async Task UpdateAsync(Employee employee)
+    {
+        _context.Employees.Update(employee);
+    }
+
+    public async Task<bool> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync() > 0;
+    }
 }

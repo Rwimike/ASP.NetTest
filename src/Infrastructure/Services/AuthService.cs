@@ -58,7 +58,7 @@ namespace Infrastructure.Services
     }
 
     public interface IAuthService
-    {
-        
+    {  
+        Task<string> LoginEmployeeAsync(string document, string email);
     }
 }

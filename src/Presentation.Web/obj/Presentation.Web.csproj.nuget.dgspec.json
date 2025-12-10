@@ -28,6 +28,9 @@
             "projectReferences": {
               "/home/rwadmin/Escritorio/TalentoPlus/src/Domain/Domain.csproj": {
                 "projectPath": "/home/rwadmin/Escritorio/TalentoPlus/src/Domain/Domain.csproj"
+              },
+              "/home/rwadmin/Escritorio/TalentoPlus/src/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/home/rwadmin/Escritorio/TalentoPlus/src/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -42,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -142,9 +149,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/rwadmin/Escritorio/TalentoPlus/src/Application/Application.csproj": {
-                "projectPath": "/home/rwadmin/Escritorio/TalentoPlus/src/Application/Application.csproj"
-              },
               "/home/rwadmin/Escritorio/TalentoPlus/src/Domain/Domain.csproj": {
                 "projectPath": "/home/rwadmin/Escritorio/TalentoPlus/src/Domain/Domain.csproj"
               }

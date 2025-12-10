@@ -1,22 +1,20 @@
-using Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using Application.Interfaces;
+using Infrastructure.Services;
 
-public static class DependencyInjection
+namespace Infrastructure
 {
-    public static IServiceCollection AddApplication(this IServiceCollection services)
+    public static class DependencyInjection
     {
-        services.AddScoped<IEmployeeService, EmployeeService>();
-        services.AddScoped<IDepartmentService, DepartmentService>();
-        services.AddScoped<IPositionService, PositionService>();
-        services.AddScoped<IStatusService, StatusService>();
-        services.AddScoped<IEducationLevelService, EducationLevelService>();
-        services.AddScoped<IAuthService, AuthService>();
-        services.AddScoped<IDashboardService, DashboardService>();
-        
-        // Add AutoMapper
-        services.AddAutoMapper(typeof(DependencyInjection).Assembly);
-        
-        return services;
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+        {
+            // Registrar todos los servicios implementados en Infrastructure
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IDashboardService, DashboardService>();
+            
+            return services;
+        }
     }
 }
-

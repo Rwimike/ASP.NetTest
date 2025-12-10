@@ -1,0 +1,34 @@
+@model List<EmployeeDTO>
+
+<h2>Lista de Empleados</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">Nuevo Empleado</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Documento</th>
+        <th>Nombres</th>
+        <th>Email</th>
+        <th>Departamento</th>
+        <th>Cargo</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Document</td>
+            <td>@emp.FirstNames @emp.LastNames</td>
+            <td>@emp.Email</td>
+            <td>@emp.DepartmentName</td>
+            <td>@emp.PositionName</td>
+            <td>
+                <a asp-action="Edit" asp-route-document="@emp.Document" class="btn btn-sm btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-document="@emp.Document" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

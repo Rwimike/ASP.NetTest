@@ -1,12 +1,12 @@
 using AutoMapper;
-using Application.DTOs.Employees;
-using Application.DTOs.Departments;
-using Application.DTOs.Positions;
-using Application.DTOs.Status;
-using Application.DTOs.EducationLevels;
+using Infrastructure.DTOs.Employees;
+using Infrastructure.DTOs.Departments;
+using Infrastructure.DTOs.Positions;
+using Infrastructure.DTOs.Status;
+using Infrastructure.DTOs.EducationLevels;
 using Domain.Entities;
 
-namespace Application.Mappings
+namespace Infrastructure.Mappings
 {
     public class MappingProfile : Profile
     {
@@ -38,7 +38,7 @@ namespace Application.Mappings
                 .ForMember(dest => dest.EmployeeCount, opt => opt.MapFrom(src => src.Employees.Count));
             
             // EducationLevel mappings
-            CreateMap<EducationLevel, EducationLevelDto>()
+            CreateMap<EducationLevel, EducationLevelDTO>()
                 .ForMember(dest => dest.EmployeeCount, opt => opt.MapFrom(src => src.Employees.Count));
         }
     }

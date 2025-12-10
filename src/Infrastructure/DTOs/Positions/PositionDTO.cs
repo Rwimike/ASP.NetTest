@@ -1,3 +1,4 @@
+namespace Infrastructure.DTOs.Positions;
 public class PositionDTO
 {
     public int Id { get; set; }

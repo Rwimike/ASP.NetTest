@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Application.DTOs.Departments;
-public class DepartmentDTO
+namespace Infrastructure.DTOs.Departments;
+public partial class DepartmentDTO
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;

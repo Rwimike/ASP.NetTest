@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: talentoplus-db
+    environment:
+      POSTGRES_DB: TalentoPlusDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - talentoplus-network
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.Web
+    container_name: talentoplus-web
+    depends_on:
+      - postgres
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=TalentoPlusDB;Username=postgres;Password=postgres123
+    volumes:
+      - ./src/Presentation.Web/wwwroot:/app/wwwroot:ro
+      - ./uploads:/app/uploads
+    networks:
+      - talentoplus-network
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.API
+    container_name: talentoplus-api
+    depends_on:
+      - postgres
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=TalentoPlusDB;Username=postgres;Password=postgres123
+      - JWT__Secret=your-super-secret-jwt-key-change-in-production
+      - JWT__Issuer=TalentoPlusAPI
+      - JWT__Audience=TalentoPlusClients
+    networks:
+      - talentoplus-network
+
+volumes:
+  postgres_data:
+  uploads:
+
+networks:
+  talentoplus-network:
+    driver: bridge
